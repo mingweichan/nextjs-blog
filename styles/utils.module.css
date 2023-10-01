@@ -22,7 +22,15 @@
   
   .headingMd {
     font-size: 1.2rem;
-    line-height: 1.5;
+    margin: 0;
+  }
+
+  .body {
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: .8rem;
   }
   
   .borderCircle {
@@ -44,7 +52,7 @@
   }
   
   .listItem {
-    margin: 0 0 1.25rem;
+    margin: 0 0 2em;
   }
   
   .lightText {

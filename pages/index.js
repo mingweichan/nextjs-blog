@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts';
+import Link from 'next/link';
 
 export default function Home({ allPostsData }) {
   console.log(allPostsData)
@@ -20,13 +21,11 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({id, date, title}) => (
+          {allPostsData.map(({id, date, title, content}) => (
           <li className={utilStyles.listItem} key={id}>
-              {title}
-              <br />
-              {id}
-              <br />
-              {date}
+              <Link href={`/posts/${id}`}>{title}</Link><br />
+              <label className={`${utilStyles.label} ${utilStyles.lightText}`}>{id} | {date}</label>
+              <p className={utilStyles.body}>{content}</p>
             </li>
             ))}
         </ul>
